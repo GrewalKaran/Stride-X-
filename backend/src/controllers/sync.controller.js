@@ -1,5 +1,5 @@
 const {getAuth} = require('@clerk/express')
-const userModel = require('../models/users.module');
+const userModel = require('../models/users.model');
 
 async function syncController(req,res){
     try{

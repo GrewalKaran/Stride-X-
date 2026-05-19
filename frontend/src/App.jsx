@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { RouterProvider } from "react-router";
 import { router } from "./app.route";
 import { ClerkProvider } from "@clerk/clerk-react";
+import RaceProvider from "./app.context.jsx"
 
 function App() {
   const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
@@ -12,7 +12,9 @@ function App() {
 
   return (
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
-      <RouterProvider router={router}/>
+      <RaceProvider>
+        <RouterProvider router={router} />
+      </RaceProvider>
     </ClerkProvider>
   );
 }

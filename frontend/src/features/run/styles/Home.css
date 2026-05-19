@@ -1,0 +1,99 @@
+.home-page {
+    min-height: 100vh;
+    background: #0f172a;
+    color: white;
+    padding: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.home-header {
+    margin-bottom: 24px;
+}
+
+.home-header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.home-header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+}
+
+.map-section {
+    width: 100%;
+    margin-bottom: 28px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 2px solid #1e293b;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.solo-btn {
+    background: #22c55e;
+    color: white;
+}
+
+.multi-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.action-buttons button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.previous-runs h2 {
+    margin-bottom: 16px;
+}
+
+.run-card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 16px;
+    border: 1px solid #334155;
+}
+
+.run-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.run-card p {
+    color: #cbd5e1;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+
+    .home-page {
+        padding: 16px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .home-header h1 {
+        font-size: 1.7rem;
+    }
+
+}
