@@ -1,5 +1,5 @@
 import { useAuth } from "@clerk/clerk-react"
-import { allRaces as getAllRacesApi, finishRace, startRace } from "../services/run.api"
+import { allRaces as getAllRacesApi, finishRace, startRace, raceReport } from "../services/run.api"
 import { useEffect } from "react"
 import { useContext } from "react"
 import { RaceContext } from "../../../app.context.jsx"
@@ -64,13 +64,8 @@ export const useAllRaces = () => {
             }
         }
 
-    return {handleAllRaces,loading,allRaces}
+    return {handleAllRaces,loading,allRaces,isLoaded}
 }
-
-
-
-
-
 
 
 export const useLocationTracker = () => {

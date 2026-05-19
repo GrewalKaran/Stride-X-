@@ -8,4 +8,6 @@ router.patch('/race/finish',raceController.endRaceController)
 
 router.get('/my-races',raceController.myRacesController)
 
+router.get('/race-report/:raceId',raceController.getRaceReport)
+
 module.exports = router;

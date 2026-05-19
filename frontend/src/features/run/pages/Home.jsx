@@ -6,16 +6,22 @@ import { Navigate, useNavigate } from "react-router";
 import { useSyncUser } from "../../auth/hooks/auth.hook";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { useStartRace } from "../hooks/run.hook";
+import { useAllRaces, useStartRace } from "../hooks/run.hook";
 
 const Home = () => {
+  const { allRaces, handleAllRaces, isLoaded } = useAllRaces();
   const { isSignedIn,user } = useSyncUser();
   const {handleStartRace,loading} = useStartRace()
-
   const [position, setPosition] = useState([28.6139, 77.209]);
 
   const navigate = useNavigate()
 
+
+  useEffect(() => {
+    if (!isLoaded || !isSignedIn) return;
+
+    handleAllRaces();
+  }, [isLoaded, isSignedIn]);
 
   useEffect(() => {
     const watchId = navigator.geolocation.watchPosition(
@@ -42,6 +48,11 @@ const Home = () => {
       navigate("/solo-run", { replace: true });
     };
 
+    const handleRaceReportHook = async (raceId) => {
+      navigate(`/race-report/${raceId}`, {
+        replace: true,
+      });
+    };
 
   if (loading) {
     return <h1>Loading...</h1>;
@@ -50,6 +61,22 @@ const Home = () => {
   if (!isSignedIn) {
     return <Navigate to="/login" replace />;
   }
+
+  const allraceComponent = allRaces.map((elem)=>{
+    return (
+      <div className="run-card" key={elem._id}>
+        <h3>{elem.distance?.toFixed(2) || "0.00"} KM</h3>
+
+        <p>{elem.duration} secs</p>
+
+        <p>Status: {elem.status}</p>
+
+        <button onClick={() => handleRaceReportHook(elem._id)}>
+          View Report
+        </button>
+      </div>
+    );
+  })
 
   return (
     <main className="home-page">
@@ -81,28 +108,16 @@ const Home = () => {
       </section>
 
       <section className="action-buttons">
-        <button
-          className="solo-btn"
-          onClick={handleSoloRun}
-        >
+        <button className="solo-btn" onClick={handleSoloRun}>
           Start Solo Run
         </button>
 
-        <button
-          className="multi-btn"
-        >
-          Multiplayer Race
-        </button>
+        <button className="multi-btn">Multiplayer Race</button>
       </section>
 
       <section className="previous-runs">
         <h2>Previous Runs</h2>
-
-        <div className="run-card">
-          <h3>5.2 KM</h3>
-          <p>Duration: 32 mins</p>
-          <p>Avg Pace: 6:10/km</p>
-        </div>
+        {allraceComponent}
       </section>
     </main>
   );

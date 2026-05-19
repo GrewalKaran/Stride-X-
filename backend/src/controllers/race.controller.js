@@ -126,4 +126,34 @@ async function myRacesController(req,res){
    })
 }
 
-module.exports = {startRaceController,endRaceController,myRacesController}
+
+async function getRaceReport(req,res){
+    const { userId } = getAuth(req);
+
+    const user = await userModel.findOne({
+    clerkUserId: userId
+    });
+
+    if (!user) {
+    return res.status(404).json({
+        message: "User not found"
+    });
+    }
+
+    const {raceId} = req.params
+    
+    const race = await raceModel.findOne({
+      _id: raceId,
+      clerkUserId: userId,
+      status: "completed",
+    })
+
+
+   return res.status(200).json({
+    message:"race report sucessfully",
+    race,
+
+   })
+}
+
+module.exports = {startRaceController,endRaceController,myRacesController,getRaceReport}

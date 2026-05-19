@@ -38,3 +38,14 @@ export const allRaces = async(token)=>{
     )
     return res.data
 }
+
+export const raceReport = async(token,raceId)=>{
+    const  res = await api.get(`/api/race-report/${raceId}`,
+        {
+            headers:{
+                Authorization:`Bearer ${token}`
+            }
+        }
+    )
+    return res.data
+}
