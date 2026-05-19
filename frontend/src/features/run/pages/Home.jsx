@@ -7,6 +7,7 @@ import { useSyncUser } from "../../auth/hooks/auth.hook";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useAllRaces, useStartRace } from "../hooks/run.hook";
+import RecenterMap from "../components/RecenterMap";
 
 const Home = () => {
   const { allRaces, handleAllRaces, isLoaded } = useAllRaces();
@@ -96,6 +97,8 @@ const Home = () => {
             borderRadius: "20px",
           }}
         >
+          <RecenterMap position={position}></RecenterMap>
+
           <TileLayer
             attribution="&copy; OpenStreetMap contributors"
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

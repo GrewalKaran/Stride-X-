@@ -1,5 +1,6 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Polyline } from "react-leaflet";
+import RecenterMap from "./RecenterMap";
 
 const RaceMap = ({ position, route }) => {
   return (
@@ -13,6 +14,9 @@ const RaceMap = ({ position, route }) => {
           borderRadius: "20px",
         }}
       >
+
+        <RecenterMap position={position}></RecenterMap>
+
         <TileLayer
           attribution="&copy; OpenStreetMap contributors"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
