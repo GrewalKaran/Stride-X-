@@ -16,7 +16,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://stride-x-m73w.vercel.app",
-      "https://stride-x-m73w.vercel.app/",
+      "https://stride-x-m73w-iyj6pzd6v-grewalkarans-projects.vercel.app",
       "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
