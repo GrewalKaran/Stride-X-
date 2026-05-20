@@ -5,7 +5,7 @@ import { useUser } from "@clerk/clerk-react";
 import { useMultiplayer } from "../hooks/multiplayer.hook";
 import "../styles/Multiplayer.css";
 
-const socket = io("http://localhost:3000");
+const socket = io(import.meta.env.VITE_SOCKET_URL);
 
 const WaitingRoom = () => {
   const { roomCode } = useParams();
