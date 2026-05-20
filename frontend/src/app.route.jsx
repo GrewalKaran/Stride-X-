@@ -15,6 +15,14 @@ export const router = createBrowserRouter([
     element: <Register />,
   },
   {
+    path: "/sign-up",
+    element: <Register />,
+  },
+  {
+    path: "/signup",
+    element: <Register />,
+  },
+  {
     path: "/login",
     element: <Login />,
   },
@@ -40,6 +48,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/multiplayer-race/:roomCode",
-    element: <MultiplayerRace/>,
+    element: <MultiplayerRace />,
   },
 ]);
