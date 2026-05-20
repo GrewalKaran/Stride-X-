@@ -11,7 +11,11 @@ function App() {
   }
 
   return (
-    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+    <ClerkProvider
+      publishableKey={PUBLISHABLE_KEY}
+      signInUrl="/login"
+      signUpUrl="/register"
+    >
       <RaceProvider>
         <RouterProvider router={router} />
       </RaceProvider>
