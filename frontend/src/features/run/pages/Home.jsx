@@ -2,7 +2,7 @@ import "../styles/Home.css";
 import "leaflet/dist/leaflet.css";
 
 import React, { useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router";
+import { Navigate, replace, useNavigate } from "react-router";
 import { useSyncUser } from "../../auth/hooks/auth.hook";
 
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
@@ -72,6 +72,8 @@ const Home = () => {
 
         <p>Status: {elem.status}</p>
 
+        <p>Mode: {elem.mode}</p>
+
         <button onClick={() => handleRaceReportHook(elem._id)}>
           View Report
         </button>
@@ -115,7 +117,9 @@ const Home = () => {
           Start Solo Run
         </button>
 
-        <button className="multi-btn">Multiplayer Race</button>
+        <button className="multi-btn" onClick={() => navigate("/multiplayer",{replace:true})}>
+          Multiplayer Race
+        </button>
       </section>
 
       <section className="previous-runs">

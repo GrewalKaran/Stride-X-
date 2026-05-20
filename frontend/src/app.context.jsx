@@ -12,6 +12,10 @@ const RaceProvider = ({ children }) => {
 
   const [allRaces, setAllRaces] = useState([]);
 
+  const [roomData, setRoomData] = useState(null);
+  
+  const [opponentPosition, setOpponentPosition] = useState(null);
+
   return (
     <RaceContext.Provider
       value={{
@@ -23,6 +27,10 @@ const RaceProvider = ({ children }) => {
         setFinalRaceData,
         allRaces,
         setAllRaces,
+        roomData,
+        setRoomData,
+        opponentPosition,
+        setOpponentPosition,
       }}
     >
       {children}

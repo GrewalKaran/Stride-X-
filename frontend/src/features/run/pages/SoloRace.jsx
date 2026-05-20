@@ -24,7 +24,6 @@ const SoloRace = () => {
 
   const handleFinishRunButton = async () => {
     stopTracking();
-
     stopTimer();
 
     const res = await handleFinishRace({
@@ -40,12 +39,22 @@ const SoloRace = () => {
     });
   };
 
+  const handleBack = () => {
+    stopTracking();
+    stopTimer();
+    navigate("/", { replace: true });
+  };
+
   if (loading) {
-    return <h1>Finishing Race...</h1>;
+    return <h1 className="page-loader">Finishing Race...</h1>;
   }
 
   return (
     <main className="solo-race-page">
+      <button className="back-btn" onClick={handleBack}>
+        ← Previous
+      </button>
+
       <RaceStats distance={distance} seconds={seconds} />
 
       <RaceMap position={position} route={route} />

@@ -3,6 +3,7 @@ const cors = require('cors')
 const {clerkMiddleware} = require('@clerk/express')
 const syncRouter = require('./routes/user.route')
 const raceRouter = require('./routes/race.route')
+const multiplayerRouter = require('./routes/multiplayer.race.route')
 
 
 const app = express()
@@ -20,6 +21,7 @@ app.use(clerkMiddleware())
 
 app.use('/api/user',syncRouter)
 app.use('/api',raceRouter)
+app.use('/api/multiplayer',multiplayerRouter)
 
 module.exports = app
 

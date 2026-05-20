@@ -1,0 +1,31 @@
+.you-marker,
+.opponent-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 800;
+    border: 3px solid white;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.you-marker {
+    background: #22c55e;
+}
+
+.opponent-marker {
+    background: #ef4444;
+}
+
+.leaflet-tooltip {
+    background: #0f172a;
+    color: white;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-weight: 700;
+}

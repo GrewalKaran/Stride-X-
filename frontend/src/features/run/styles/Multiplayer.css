@@ -1,0 +1,120 @@
+.multiplayer-page {
+    min-height: 100vh;
+    background: #0f172a;
+    color: white;
+    padding: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.multiplayer-card {
+    max-width: 720px;
+    margin: 24px auto;
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 22px;
+    padding: 28px;
+}
+
+.multiplayer-card h1 {
+    font-size: 2rem;
+    margin-bottom: 22px;
+}
+
+.multiplayer-card h2 {
+    margin: 18px 0 12px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.form-section input,
+.form-section select {
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #334155;
+    background: #0f172a;
+    color: white;
+    outline: none;
+}
+
+.primary-btn,
+.secondary-btn,
+.back-btn {
+    border: none;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.primary-btn {
+    background: #22c55e;
+    color: white;
+}
+
+.secondary-btn {
+    background: #3b82f6;
+    color: white;
+}
+
+.back-btn {
+    background: #334155;
+    color: white;
+}
+
+.primary-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover,
+.back-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.players-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+.muted-text {
+    color: #cbd5e1;
+}
+
+.page-loader {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #0f172a;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .multiplayer-page {
+        padding: 16px;
+    }
+
+    .multiplayer-card {
+        padding: 20px;
+    }
+
+    .multiplayer-card h1 {
+        font-size: 1.6rem;
+    }
+}

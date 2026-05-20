@@ -62,6 +62,21 @@ const raceSchema = new mongoose.Schema(
         timestamp: Date,
       },
     ],
+    result: {
+    type: String,
+    enum: ["win", "lose", "draw", "none"],
+    default: "none",
+  },
+
+    opponentDistance: {
+    type: Number,
+    default: 0,
+  },
+
+    opponentDuration: {
+    type: Number,
+    default: 0,
+  },
   },
   { timestamps: true }
 );
