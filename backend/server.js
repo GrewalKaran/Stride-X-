@@ -17,6 +17,7 @@ const io = new Server(server, {
     origin: [
       "https://stride-x-m73w.vercel.app",
       "https://stride-x-m73w-iyj6pzd6v-grewalkarans-projects.vercel.app",
+      "https://stride-x-m73w.vercel.app/?_vercel_share=zKzErsHc7jtIkbtFulKnj5zdwpKnLbyZhttps://stride-x-m73w.vercel.app/?_vercel_share=zKzErsHc7jtIkbtFulKnj5zdwpKnLbyZ",
       "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
