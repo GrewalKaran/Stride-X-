@@ -15,9 +15,8 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      "https://stride-x-m73w.vercel.app",
-      "https://stride-x-m73w-iyj6pzd6v-grewalkarans-projects.vercel.app",
-      "https://stride-x-m73w.vercel.app/?_vercel_share=zKzErsHc7jtIkbtFulKnj5zdwpKnLbyZhttps://stride-x-m73w.vercel.app/?_vercel_share=zKzErsHc7jtIkbtFulKnj5zdwpKnLbyZ",
+      "https://stride-x-six.vercel.app/?_vercel_share=JDuD7vo4SdKxLix204MN8UAlJA48kiSP",
+      "https://stride-x-six.vercel.app",
       "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PATCH", "DELETE"],
