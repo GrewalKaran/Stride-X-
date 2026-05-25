@@ -5,7 +5,10 @@ import { useUser } from "@clerk/clerk-react";
 import { useMultiplayer } from "../hooks/multiplayer.hook";
 import "../styles/Multiplayer.css";
 
-const socket = io(import.meta.env.VITE_SOCKET_URL);
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
+  transports: ["websocket"],
+  withCredentials: true,
+});
 
 const WaitingRoom = () => {
   const { roomCode } = useParams();
