@@ -10,7 +10,10 @@ import RaceMap from "../components/RaceMap";
 import RaceStats from "../components/RaceStats";
 import "../styles/MultiplayerRace.css";
 
-const socket = io(import.meta.env.VITE_SOCKET_URL);
+const socket = io(import.meta.env.VITE_SOCKET_URL, {
+  transports: ["websocket"],
+  withCredentials: true,
+});
 
 const TARGET_TIME = 60;
 
