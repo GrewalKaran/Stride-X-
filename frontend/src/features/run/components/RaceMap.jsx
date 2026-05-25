@@ -12,17 +12,15 @@ import L from "leaflet";
 import RecenterMap from "./RecenterMap";
 import "../styles/RaceMap.css";
 
-const youIcon = L.divIcon({
+const youIcon = L.icon({
   className: "you-marker",
-  html: "YOU",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
   iconUrl: youIconUrl,
 });
 
-const opponentIcon = L.divIcon({
+const opponentIcon = L.icon({
   className: "opponent-marker",
-  html: "OP",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
   iconUrl: opponentIconUrl,
