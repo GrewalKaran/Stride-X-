@@ -1,5 +1,5 @@
-const youIconUrl = `${process.env.PUBLIC_URL}/maps-and-flags.png`;
-const opponentIconUrl = `${process.env.PUBLIC_URL}/placeholder.png`;
+const youIconUrl = `${import.meta.env.PUBLIC_URL}/maps-and-flags.png`;
+const opponentIconUrl = `${import.meta.env.PUBLIC_URL}/placeholder.png`;
 import React from "react";
 import {
   MapContainer,
@@ -13,14 +13,12 @@ import RecenterMap from "./RecenterMap";
 import "../styles/RaceMap.css";
 
 const youIcon = L.icon({
-  className: "you-marker",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
   iconUrl: youIconUrl,
 });
 
 const opponentIcon = L.icon({
-  className: "opponent-marker",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
   iconUrl: opponentIconUrl,
