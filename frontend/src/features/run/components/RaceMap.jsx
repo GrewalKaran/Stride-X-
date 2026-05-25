@@ -1,4 +1,7 @@
 import React from "react";
+import youImg from "../../../assets/maps-and-flags.png";
+import opponentImg from "../../../assets/placeholder.png";
+
 import {
   MapContainer,
   TileLayer,
@@ -12,13 +15,13 @@ import RecenterMap from "./RecenterMap";
 import "../styles/RaceMap.css";
 
 const youIcon = L.icon({
-  iconUrl: "/maps-and-flags.png",
+  iconUrl: youImg,
   iconSize: [44, 44],
   iconAnchor: [22, 22],
 });
 
 const opponentIcon = L.icon({
-  iconUrl: "/placeholder.png",
+  iconUrl: opponentImg,
   iconSize: [44, 44],
   iconAnchor: [22, 22],
 });
