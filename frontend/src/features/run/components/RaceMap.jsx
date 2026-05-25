@@ -1,5 +1,3 @@
-const youIconUrl = `${import.meta.env.PUBLIC_URL}/maps-and-flags.png`;
-const opponentIconUrl = `${import.meta.env.PUBLIC_URL}/placeholder.png`;
 import React from "react";
 import {
   MapContainer,
@@ -8,20 +6,21 @@ import {
   Polyline,
   Tooltip,
 } from "react-leaflet";
+
 import L from "leaflet";
 import RecenterMap from "./RecenterMap";
 import "../styles/RaceMap.css";
 
 const youIcon = L.icon({
+  iconUrl: "/maps-and-flags.png",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
-  iconUrl: youIconUrl,
 });
 
 const opponentIcon = L.icon({
+  iconUrl: "/placeholder.png",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
-  iconUrl: opponentIconUrl,
 });
 
 const RaceMap = ({
