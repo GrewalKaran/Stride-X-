@@ -10,7 +10,7 @@ const app = express()
 app.use(
   cors({
     origin: [
-      "https://stride-x.netlify.app",
+      "https://stride-x-frontend.onrender.com",
       "https://stride-x-six.vercel.app/?_vercel_share=JDuD7vo4SdKxLix204MN8UAlJA48kiSP",
       "https://stride-x-six.vercel.app",
       "http://localhost:5173"
