@@ -11,11 +11,11 @@ import MultiplayerRace from './features/run/pages/MultiplayerRace';
 
 export const router = createBrowserRouter([
   {
-    path: "/register",
+    path: "/register/*",
     element: <Register />,
   },
   {
-    path: "/login",
+    path: "/login/*",
     element: <Login />,
   },
   {
