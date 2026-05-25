@@ -1,3 +1,5 @@
+const youIconUrl = `${process.env.PUBLIC_URL}/maps-and-flags.png`;
+const opponentIconUrl = `${process.env.PUBLIC_URL}/placeholder.png`;
 import React from "react";
 import {
   MapContainer,
@@ -15,6 +17,7 @@ const youIcon = L.divIcon({
   html: "YOU",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
+  iconUrl: youIconUrl,
 });
 
 const opponentIcon = L.divIcon({
@@ -22,6 +25,7 @@ const opponentIcon = L.divIcon({
   html: "OP",
   iconSize: [44, 44],
   iconAnchor: [22, 22],
+  iconUrl: opponentIconUrl,
 });
 
 const RaceMap = ({
